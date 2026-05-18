@@ -1,0 +1,15 @@
+Z:\C#\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.exe
+Z:\C#\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.deps.json
+Z:\C#\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.runtimeconfig.json
+Z:\C#\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.dll
+Z:\C#\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.pdb
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.GeneratedMSBuildEditorConfig.editorconfig
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.AssemblyInfoInputs.cache
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.AssemblyInfo.cs
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.csproj.CoreCompileInputs.cache
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.sourcelink.json
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.dll
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\refint\ConsoleBankingApp.dll
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.pdb
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.genruntimeconfig.cache
+Z:\C#\ConsoleBankingApp\obj\Debug\net8.0\ref\ConsoleBankingApp.dll
