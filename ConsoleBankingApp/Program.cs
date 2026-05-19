@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace BankConsoleApp
 {
-   
+
     class BankAccount
     {
-     
+
         public string AccountHolderName { get; private set; }
         public int AccountNumber { get; private set; }
         public decimal Balance { get; private set; }
@@ -79,13 +80,31 @@ namespace BankConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your account holder name: ");
-            string name = Console.ReadLine();
-            Console.WriteLine("Enter your account number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("===============================");
+            Console.WriteLine("WELCOME TO THE BANK OF ABC ");
+            Console.WriteLine("===============================");
 
-           
-            BankAccount account = new BankAccount(name, number, 1500.75m);
+            Console.Write("Enter your account holder name: ");
+            string name = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(name) || int.TryParse(name, out _))
+            {
+                Console.WriteLine("Enter the Valid Name (Letters only) !!!");
+                name = Console.ReadLine();
+            }
+            Console.Write("Enter your account number: ");
+            int number;
+            while (!int.TryParse(Console.ReadLine(), out number))
+            {
+                Console.WriteLine("Enter the valid Account Number !!! ");
+            }
+            Console.Write("Enter the Amount to deposit initially ? ");
+            decimal balance;
+            while (!decimal.TryParse(Console.ReadLine(), out balance))
+            {
+                Console.WriteLine("Enter the valid Initial Balance  !!! ");
+            }
+
+            BankAccount account = new BankAccount(name, number, balance);
 
             bool running = true;
             while (running)
@@ -94,40 +113,64 @@ namespace BankConsoleApp
                 DisplayMenu();
 
                 Console.Write("Please choose an option (1-7): ");
-                int selectedOption = Convert.ToInt32(Console.ReadLine());
-
-                switch (selectedOption)
+                int selectedOption;
+                if (int.TryParse(Console.ReadLine(), out selectedOption))
                 {
-                    case 1:
-                        account.PrintDetails(); 
-                        break;
-                    case 2:
-                        ShowWelcomeMessage(account.AccountHolderName);
-                        break;
-                    case 3:
-                        Console.Write("Enter amount to deposit: ");
-                        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
-                        account.Deposit(depositAmount);
-                        break;
-                    case 4:
-                        Console.Write("Enter amount to withdraw: ");
-                        decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
-                        account.Withdraw(withdrawAmount);
-                        break;
-                    case 5:
-                        Console.WriteLine($"Your Balance is {account.Balance:F2}");
-                        break;
-                    case 6:
-                        account.ShowTransactions();
-                        break;
-                    case 7:
-                        Console.WriteLine("Exiting... Goodbye!");
-                        running = false;
-                        break;
-                    default:
-                        Console.WriteLine("Invalid option. Please try again.");
-                        break;
+                    switch (selectedOption)
+                    {
+                        case 1:
+                            account.PrintDetails();
+                            break;
+                        case 2:
+                            ShowWelcomeMessage(account.AccountHolderName);
+                            break;
+                        case 3:
+                            Console.Write("Enter amount to deposit: ");
+                            decimal depositAmount;
+                            if (decimal.TryParse(Console.ReadLine(), out depositAmount))
+                            {
+                                account.Deposit(depositAmount);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Enter valid input !!!");
+                            }
+
+                            break;
+                        case 4:
+                            Console.Write("Enter amount to withdraw: ");
+                            decimal withdrawAmount;
+                            if (decimal.TryParse(Console.ReadLine(), out withdrawAmount))
+                            {
+                                account.Withdraw(withdrawAmount);
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("Enter valid input !!!");
+                            }
+                            break;
+                        case 5:
+                            Console.WriteLine($"Your Balance is {account.Balance:F2}");
+                            break;
+                        case 6:
+                            account.ShowTransactions();
+                            break;
+                        case 7:
+                            Console.WriteLine("Exiting... Goodbye!");
+                            running = false;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid option. Please try again.");
+                            break;
+                    }
                 }
+                else
+                {
+                    Console.WriteLine("Enter valid input !!! ");
+                }
+
+
 
                 if (running)
                 {
@@ -155,3 +198,8 @@ namespace BankConsoleApp
         }
     }
 }
+
+
+
+
+
