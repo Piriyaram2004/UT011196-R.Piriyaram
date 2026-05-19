@@ -1,8 +1,3 @@
-﻿
-
-
-
-
 using System;
 using System.Collections.Generic;
 
@@ -12,25 +7,11 @@ namespace BankConsoleApp
     class BankAccount
     {
      
-
-
         public string AccountHolderName { get; private set; }
-
         public int AccountNumber { get; private set; }
-
-
         public decimal Balance { get; private set; }
 
-
-
-
-
         private List<string> transactions = new List<string>();
-
-
-
-      
-
 
         public BankAccount(string holderName, int accountNumber, decimal initialBalance)
         {
@@ -39,17 +20,12 @@ namespace BankConsoleApp
             Balance = initialBalance;
         }
 
-
-
-
         public void PrintDetails()
         {
             Console.WriteLine($"Account Holder: {AccountHolderName}");
             Console.WriteLine($"Account Number: {AccountNumber}");
             Console.WriteLine($"Current Balance: {Balance:F2}");
         }
-
-
 
         public void Deposit(decimal amount)
 
@@ -65,10 +41,6 @@ namespace BankConsoleApp
                 Console.WriteLine("Enter a valid amount!");
             }
         }
-
-
- 
-
 
         public bool Withdraw(decimal amount)
         {
@@ -86,7 +58,6 @@ namespace BankConsoleApp
             }
         }
 
-    
         public void ShowTransactions()
         {
             if (transactions.Count == 0)
@@ -113,8 +84,7 @@ namespace BankConsoleApp
             Console.WriteLine("Enter your account number: ");
             int number = Convert.ToInt32(Console.ReadLine());
 
-            // Create BankAccount object with initial balance
-
+           
             BankAccount account = new BankAccount(name, number, 1500.75m);
 
             bool running = true;
@@ -134,9 +104,6 @@ namespace BankConsoleApp
                     case 2:
                         ShowWelcomeMessage(account.AccountHolderName);
                         break;
-
-
-
                     case 3:
                         Console.Write("Enter amount to deposit: ");
                         decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
@@ -147,9 +114,6 @@ namespace BankConsoleApp
                         decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
                         account.Withdraw(withdrawAmount);
                         break;
-                    
-                    
-                    
                     case 5:
                         Console.WriteLine($"Your Balance is {account.Balance:F2}");
                         break;
