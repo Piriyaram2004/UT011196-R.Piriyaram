@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 
 namespace BankConsoleApp
 {
-
     class BankAccount
     {
-
         public string AccountHolderName { get; private set; }
         public int AccountNumber { get; private set; }
         public decimal Balance { get; private set; }
@@ -29,7 +26,6 @@ namespace BankConsoleApp
         }
 
         public void Deposit(decimal amount)
-
         {
             if (amount > 0)
             {
@@ -78,30 +74,107 @@ namespace BankConsoleApp
 
     internal class Program
     {
+
+        static Dictionary<string, string> users = new Dictionary<string, string>();
+
+
+        static Dictionary<string, (string firstName, string lastName, string nic, string mobile)> userDetails =
+            new Dictionary<string, (string, string, string, string)>();
+
         static void Main(string[] args)
         {
             Console.WriteLine("===============================");
-            Console.WriteLine("WELCOME TO THE BANK OF ABC ");
+            Console.WriteLine("WELCOME TO BANK OF ABC");
             Console.WriteLine("===============================");
+
+            bool loggedIn = false;
+            string loggedUser = "";
+
+            while (!loggedIn)
+            {
+                Console.WriteLine("1. Login");
+                Console.WriteLine("2. Create Account");
+                Console.Write("Choose option: ");
+                string choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    Console.Write("Enter Username: ");
+                    string username = Console.ReadLine();
+
+                    Console.Write("Enter Password: ");
+                    string password = Console.ReadLine();
+
+                    if (users.ContainsKey(username) && users[username] == password)
+                    {
+                        Console.WriteLine("Login Successful ✅");
+                        loggedIn = true;
+                        loggedUser = username;
+
+
+                        var details = userDetails[username];
+                        Console.WriteLine($"Welcome {details.firstName} {details.lastName}!");
+                        Console.WriteLine($"NIC: {details.nic}, Mobile: {details.mobile}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid credentials ❌. Try again.");
+                    }
+                }
+                else if (choice == "2")
+                {
+                    Console.Write("Choose a Username: ");
+                    string newUser = Console.ReadLine();
+
+                    if (users.ContainsKey(newUser))
+                    {
+                        Console.WriteLine("Username already exists ❌. Try another.");
+                        continue;
+                    }
+
+                    Console.Write("Choose a Password: ");
+                    string newPass = Console.ReadLine();
+
+                    Console.Write("Enter First Name: ");
+                    string firstName = Console.ReadLine();
+
+                    Console.Write("Enter Last Name: ");
+                    string lastName = Console.ReadLine();
+
+                    Console.Write("Enter NIC No: ");
+                    string nic = Console.ReadLine();
+
+                    Console.Write("Enter Mobile No: ");
+                    string mobile = Console.ReadLine();
+
+
+                    users[newUser] = newPass;
+                    userDetails[newUser] = (firstName, lastName, nic, mobile);
+
+                    Console.WriteLine("Account created successfully ✅. You can now login.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid option. Try again.");
+                }
+            }
+
 
             Console.Write("Enter your account holder name: ");
             string name = Console.ReadLine();
-            while (string.IsNullOrWhiteSpace(name) || int.TryParse(name, out _))
-            {
-                Console.WriteLine("Enter the Valid Name (Letters only) !!!");
-                name = Console.ReadLine();
-            }
+
             Console.Write("Enter your account number: ");
             int number;
             while (!int.TryParse(Console.ReadLine(), out number))
             {
                 Console.WriteLine("Enter the valid Account Number !!! ");
             }
+
             Console.Write("Enter the Amount to deposit initially ? ");
             decimal balance;
             while (!decimal.TryParse(Console.ReadLine(), out balance))
             {
-                Console.WriteLine("Enter the valid Initial Balance  !!! ");
+                Console.WriteLine("Enter the valid Initial Balance !!! ");
             }
 
             BankAccount account = new BankAccount(name, number, balance);
@@ -113,8 +186,7 @@ namespace BankConsoleApp
                 DisplayMenu();
 
                 Console.Write("Please choose an option (1-7): ");
-                int selectedOption;
-                if (int.TryParse(Console.ReadLine(), out selectedOption))
+                if (int.TryParse(Console.ReadLine(), out int selectedOption))
                 {
                     switch (selectedOption)
                     {
@@ -126,29 +198,17 @@ namespace BankConsoleApp
                             break;
                         case 3:
                             Console.Write("Enter amount to deposit: ");
-                            decimal depositAmount;
-                            if (decimal.TryParse(Console.ReadLine(), out depositAmount))
-                            {
+                            if (decimal.TryParse(Console.ReadLine(), out decimal depositAmount))
                                 account.Deposit(depositAmount);
-                            }
                             else
-                            {
                                 Console.WriteLine("Enter valid input !!!");
-                            }
-
                             break;
                         case 4:
                             Console.Write("Enter amount to withdraw: ");
-                            decimal withdrawAmount;
-                            if (decimal.TryParse(Console.ReadLine(), out withdrawAmount))
-                            {
+                            if (decimal.TryParse(Console.ReadLine(), out decimal withdrawAmount))
                                 account.Withdraw(withdrawAmount);
-
-                            }
                             else
-                            {
                                 Console.WriteLine("Enter valid input !!!");
-                            }
                             break;
                         case 5:
                             Console.WriteLine($"Your Balance is {account.Balance:F2}");
@@ -169,8 +229,6 @@ namespace BankConsoleApp
                 {
                     Console.WriteLine("Enter valid input !!! ");
                 }
-
-
 
                 if (running)
                 {
@@ -198,8 +256,3 @@ namespace BankConsoleApp
         }
     }
 }
-
-
-
-
-

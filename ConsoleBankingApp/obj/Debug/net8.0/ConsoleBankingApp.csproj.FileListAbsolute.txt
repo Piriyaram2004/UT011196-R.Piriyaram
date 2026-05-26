@@ -28,3 +28,18 @@ Z:\Gitbank\BankGIT\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\refin
 Z:\Gitbank\BankGIT\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.pdb
 Z:\Gitbank\BankGIT\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.genruntimeconfig.cache
 Z:\Gitbank\BankGIT\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ref\ConsoleBankingApp.dll
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.exe
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.deps.json
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.runtimeconfig.json
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.dll
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\bin\Debug\net8.0\ConsoleBankingApp.pdb
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.AssemblyInfoInputs.cache
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.AssemblyInfo.cs
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.csproj.CoreCompileInputs.cache
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.sourcelink.json
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.dll
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\refint\ConsoleBankingApp.dll
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.pdb
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ConsoleBankingApp.genruntimeconfig.cache
+C:\Users\HP VICTUS\OneDrive\Documents\c# bank new version\UT011196-R.Piriyaram\ConsoleBankingApp\obj\Debug\net8.0\ref\ConsoleBankingApp.dll
